@@ -1,7 +1,16 @@
 react
 https://react.vlpt.us/
 
-node.js 설치(cmd - node -v / npm -v 확인)
+사용 이유
+처음 부터 다시 코드를 돌리는 모던 js(vanila js) 다르게 가상 돔을 사용하기 때문에 변경된 부분만 다시 리렌더링하기 때문에 모던 js보다 빠르다.
+virtual Dom - 부분 랜더링 가능
+
+컴포넌트 = 함수
+JSX: React에서의 HTML코드
+    : 꼭 닫아서 사용해야하는 코드(<div></div>, <div /> 하나라도 없으면 오류)
+    : 꼭 감싸져야 한다.(두개 이상의 태그는 하나의 태그로 묶기)
+
+node.js 설치(cmd > node -v / npm -v 확인)
 
 라이브러리 추가 설치
 npm -> search(필요한 라이브러이 다운 가능) - npm i ...
