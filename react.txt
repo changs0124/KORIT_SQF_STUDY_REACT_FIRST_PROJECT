@@ -31,6 +31,8 @@ npx create-react-app ...(디렉토리 이름)
 > 오류: ENOENT: no such file or directory, ltstat 'C\Users\user\AppData\Roaming\npm' - 해당 폴도가 존재 X > 경로로 가서 파일 생성
 오류 발생 시 npm 새로 설치
 npm remove npm > npm install npm = npm reinstall npm
+> clone하고 npm 실행시 오류 발생
+node modules 삭제 > npm install > npm start
 
 프로젝트 실행
 terminal > npm start > react 실행
@@ -39,3 +41,7 @@ terminal > npm start > react 실행
 App.js - import, return안의 코드들 삭제
 Index.js - 주석, import reportWebVital, StrictMode삭제 
 App.css / App.test.js / logo.svg / reportWebVital.js / setUpTests.js 삭제
+
+리액트에서 qeurySelector 사용 지양
+virtual Dom을 사용하는 리액트에서 Real Dom을 직접 건드리게 되면 state제어와 디버깅이 어려워 지기 때문에 지양해야 한다.
+만약에 Real Dom을 건드려야 한다면 ref:render를 사용하자
