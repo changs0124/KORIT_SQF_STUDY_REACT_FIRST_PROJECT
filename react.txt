@@ -2,6 +2,9 @@ react
 https://react.vlpt.us/
 https://www.npmjs.com/
 
+alert
+SweetAlert2
+
 사용 이유
 처음 부터 다시 코드를 돌리는 모던 js(vanila js) 다르게 가상 돔을 사용하기 때문에 변경된 부분만 다시 리렌더링하기 때문에 모던 js보다 빠르다.
 virtual Dom - 부분 랜더링 가능
@@ -44,4 +47,6 @@ App.css / App.test.js / logo.svg / reportWebVital.js / setUpTests.js 삭제
 
 리액트에서 qeurySelector 사용 지양
 virtual Dom을 사용하는 리액트에서 Real Dom을 직접 건드리게 되면 state제어와 디버깅이 어려워 지기 때문에 지양해야 한다.
-만약에 Real Dom을 건드려야 한다면 ref:render를 사용하자
+만약에 Real Dom을 건드려야 한다면 ref:render를 사용하기
+
+simple react snippets 설치
