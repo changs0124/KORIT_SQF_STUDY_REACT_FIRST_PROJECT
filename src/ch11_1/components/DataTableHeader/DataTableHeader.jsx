@@ -1,20 +1,13 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import "./style.css";
 
-function DataTableHeader({ mode, setMode, products, setProducts }) {
+function DataTableHeader({ mode, setMode, products, setProducts, checkedProducts, setCheckedProducts, inputRefs}) {
     const emptyProduct = {
         id: 0,
         productName: "",
         size: "",
         color: "",
         price: ""
-    }
-
-    const inputRefs = {
-        productName: useRef(),
-        size: useRef(),
-        color: useRef(),
-        price: useRef()
     }
 
     const [ inputValue, setInputValue ] = useState({ ...emptyProduct });
@@ -38,11 +31,7 @@ function DataTableHeader({ mode, setMode, products, setProducts }) {
             }
             if(e.target.name === "color" && e.target.value !== "") {
                 inputRefs.price.current.focus();
-            }
-            if(e.target.name === "price" && e.target.value !== "") {
-                
-            }
-            
+            }            
         }  
     }
 
@@ -51,6 +40,7 @@ function DataTableHeader({ mode, setMode, products, setProducts }) {
         const maxProductId = productIds.length === 0 ? 0 : Math.max.apply(null, productIds);
         return maxProductId + 1;
     }
+
     const handleChangeModeClick = (e) => {
         setMode(parseInt(e.target.value));
     }
@@ -62,9 +52,13 @@ function DataTableHeader({ mode, setMode, products, setProducts }) {
             alert("상품추가")
         }
         if(mode === 2) {
+            setCheckedProducts([]);
+            setInputValue({ ...emptyProduct })
             alert("상품수정")
         }
         if(mode === 3) {
+            setProducts(products.filter(({id}) => !checkedProducts.includes(id)));
+            setCheckedProducts([]);
             alert("상품삭제")
         }
         resetMode();
@@ -72,13 +66,13 @@ function DataTableHeader({ mode, setMode, products, setProducts }) {
 
     const handleCancelClick = () => {
         setInputValue({ ...emptyProduct });
+        setCheckedProducts([]);
         resetMode();
     }
 
     const resetMode = () => {
         setMode(0);
     }
-
 
     return (
         <header className="table-header">
