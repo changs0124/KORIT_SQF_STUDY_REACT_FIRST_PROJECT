@@ -7,26 +7,22 @@ function DataTableBody({ mode, products, checkedProducts, setCheckedProducts, in
                 setCheckedProducts(checkedProduct => checkedProduct.filter((i) => i === id));
             }
             setCheckedProducts(checkedProduct => [ ...checkedProduct, id]);
-            inputRefs.productName = "1234"
         }   
-
-        
         if(mode === 3) {
             if(checkedProducts.includes(id)) {
                 setCheckedProducts(checkedProduct => checkedProduct.filter((i) => i !== id));
-            } else {
-                setCheckedProducts(checkedProduct => [ ...checkedProduct, id]);
-            }     
+            }  
+            setCheckedProducts(checkedProduct => [ ...checkedProduct, id]);       
         }
     }
-
+    
     const handleAllProductChecked = (e) => {
         if(mode === 3) {
             if(e.target.checked) {
                 setCheckedProducts(products.map((product) => product.id));
-            } else {
-                setCheckedProducts([]);
+                return
             }
+            setCheckedProducts([]);
         }
     }
 

@@ -3,7 +3,7 @@ import "./style.css";
 
 function DataTableHeader({ mode, setMode, products, setProducts, checkedProducts, setCheckedProducts, inputRefs}) {
     const emptyProduct = {
-        id: 0,
+        id: "",
         productName: "",
         size: "",
         color: "",
@@ -32,6 +32,9 @@ function DataTableHeader({ mode, setMode, products, setProducts, checkedProducts
             if(e.target.name === "color" && e.target.value !== "") {
                 inputRefs.price.current.focus();
             }            
+            if(e.target.name === "price" && e.target.value !== "") {
+                inputRefs.price.current.focus();
+            }            
         }  
     }
 
@@ -48,29 +51,25 @@ function DataTableHeader({ mode, setMode, products, setProducts, checkedProducts
     const handleSubmitClick = () => {
         if(mode === 1) {
             setProducts(product => [ ...products, { ...inputValue, id: getNewId()}]);
-            setInputValue({ ...emptyProduct });
             alert("상품추가")
         }
         if(mode === 2) {
-            setCheckedProducts([]);
-            setInputValue({ ...emptyProduct })
             alert("상품수정")
         }
         if(mode === 3) {
             setProducts(products.filter(({id}) => !checkedProducts.includes(id)));
-            setCheckedProducts([]);
             alert("상품삭제")
         }
         resetMode();
     }
 
     const handleCancelClick = () => {
-        setInputValue({ ...emptyProduct });
-        setCheckedProducts([]);
         resetMode();
     }
 
     const resetMode = () => {
+        setInputValue({ ...emptyProduct });
+        setCheckedProducts([]);
         setMode(0);
     }
 
