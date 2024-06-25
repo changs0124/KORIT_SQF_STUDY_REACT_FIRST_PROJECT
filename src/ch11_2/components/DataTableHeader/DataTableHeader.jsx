@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import "./style.css";
 import Swal from "sweetalert2";
 
-function DataTableHeader({ mode, setMode, setProducts, viewProducts, isEditRequest, setIsEditRequest }) {
+function DataTableHeader({ mode, setMode, setProducts, viewProducts, isEditRequest, setIsEditRequest}) {
     const emptyProduct = {
         id: "",
         productName: "",
@@ -66,39 +66,58 @@ function DataTableHeader({ mode, setMode, setProducts, viewProducts, isEditReque
             resetMode();
         }
         if(mode === 2) {
-            Swal.fire({
-                title: "상품 정보 삭제",
-                text: "정말로 삭제 하지겠습니까>",
-                showCancelButton: true,
-                confirmButtonText: "삭제",
-                confirmButtonColor: "red",
-                cancelButtonText: "취소"
-            }).then(result => {
-                if(result.isConfirmed) {
-                    
-                }
-            });
+            
+            // setProducts(products => [ ...products.map(product => product.id !== viewProductsId)])
+            // Swal.fire({
+            //     title: "상품 정보 삭제",
+            //     text: "정말로 삭제 하지겠습니까>",
+            //     showCancelButton: true,
+            //     confirmButtonText: "삭제",
+            //     confirmButtonColor: "red",
+            //     cancelButtonText: "취소"
+            // }).then(result => {
+            //     if(result.isConfirmed) {
+            //         setProducts(viewProducts => [ ...viewProducts.map(({id}) => {
+            //             if(id === id) {
+            //                 return {
+            //                     ...product,
+            //                     [key]: result.value
+            //                 }
+            //             }
+            //             return user;
+            //         })]);
+            //     }
+            // });
 
             alert("상품수정")
         }
         if(mode === 3) {    
-            Swal.fire({
-                title: "상품 정보 삭제",
-                text: "정말로 삭제 하지겠습니까>",
-                showCancelButton: true,
-                confirmButtonText: "삭제",
-                confirmButtonColor: "red",
-                cancelButtonText: "취소"
-            }).then(result => {
-                if(result.isConfirmed) {
-                    setProducts([ ...viewProducts
-                        .filter(viewProduct => viewProduct.isChecked === false).map(viewProduct => {
-                            const { isChecked, ...product }  = viewProduct;
-                            return product;
-                        })]);
-                }
-                setMode(0);
-            });
+            // const sel = viewProducts.filter(viewProduct => !viewProduct.isChecked)
+            setProducts([...viewProducts.filter(viewProduct => viewProduct.isChecked === false)
+                .map(viewProduct => {
+                    const {isChecked, ...product} = viewProduct;
+                    return product;
+                })
+            ])
+
+            
+            // Swal.fire({
+            //     title: "상품 정보 삭제",
+            //     text: "정말로 삭제 하지겠습니까>",
+            //     showCancelButton: true,
+            //     confirmButtonText: "삭제",
+            //     confirmButtonColor: "red",
+            //     cancelButtonText: "취소"
+            // }).then(result => {
+            //     if(result.isConfirmed) {
+            //         setProducts([ ...viewProducts
+            //             .filter(viewProduct => viewProduct.isChecked === false).map(viewProduct => {
+            //                 const { isChecked, ...product }  = viewProduct;
+            //                 return product;
+            //             })]);
+            //     }
+            //     setMode(0);
+            // });
         }
     }
 
@@ -110,7 +129,6 @@ function DataTableHeader({ mode, setMode, setProducts, viewProducts, isEditReque
         setInputData({ ...emptyProduct });
         setMode(0);
     }
-
 
     return (
         <header className="table-header">

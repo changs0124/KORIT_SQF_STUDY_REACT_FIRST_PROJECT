@@ -1,8 +1,8 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./style.css";
 import Swal from "sweetalert2";
 
-function DataTableHeader({ mode, setMode, setProducts, setIsDeleteRequest }) {
+function DataTableHeader({ mode, setMode, products, setProducts, setIsDeleteRequest, editProductId }) {
     const emptyProduct = {
         id: "",
         productName: "",
@@ -66,12 +66,34 @@ function DataTableHeader({ mode, setMode, setProducts, setIsDeleteRequest }) {
             resetMode();
         }
         if(mode === 2) {
-            alert("상품수정")
+            Swal.fire({
+                title: "상품 정보 수정",
+                showCancelButton: true,
+                confirmButtonText: "확인",
+                confirmButtonColor: "blue",
+                cancelButtonText: "취소"
+            }).then(result => {
+                if(result.isConfirmed) {
+                    setProducts(products => [ ...products.map(product => {
+                        if(product.id === editProductId) {
+                            const { id, ...rest } = inputData
+                            return {
+                                ...product,
+                                ...rest
+                            }
+                        }
+                        return product
+                    })])
+                }
+            })
+            resetMode();
         }
+
+        
         if(mode === 3) {    
             Swal.fire({
                 title: "상품 정보 삭제",
-                text: "정말로 삭제 하지겠습니까>",
+                text: "정말로 삭제 하시겠습니까?",
                 showCancelButton: true,
                 confirmButtonText: "삭제",
                 confirmButtonColor: "red",
@@ -84,6 +106,11 @@ function DataTableHeader({ mode, setMode, setProducts, setIsDeleteRequest }) {
         }
         
     }
+
+    useEffect(() => {
+       const [ product ] = products.filter(product => product.id === editProductId);
+       setInputData(!product ? { ...emptyProduct} : { ...product });
+    }, [editProductId])
 
     const handleCancelClick = () => {
         resetMode();

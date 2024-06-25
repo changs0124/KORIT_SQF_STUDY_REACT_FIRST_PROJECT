@@ -1,0 +1,36 @@
+html, body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.imgbox, img {
+    box-sizing: border-box;
+    border-radius: 50%;
+    border: 1px soild black;
+    cursor: pointer;
+    width: 300px;
+    height: 300px;
+    
+}
+
+img {
+    border: 1px solid black;
+}
+
+input {
+    display: block;
+}
+
+
+

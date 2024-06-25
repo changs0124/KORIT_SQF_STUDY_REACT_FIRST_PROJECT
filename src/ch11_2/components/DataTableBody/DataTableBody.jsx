@@ -35,6 +35,7 @@ function DataTableBody({ mode, setMode, products, setProducts, viewProducts, set
 
     const handleCheckedKeyChange = (e) => {
         if(mode === 2) {
+            setIsEditRequest(true);
             setViewProducts(viewProducts => {
                 return [ ...viewProducts.map(product => {
                     if(product.id === parseInt(e.target.value)) {
@@ -49,7 +50,7 @@ function DataTableBody({ mode, setMode, products, setProducts, viewProducts, set
                     };
                 })]
             })
-            setIsEditRequest(true);
+            
         }
 
         if(mode === 3) {

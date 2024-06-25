@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './ch11_2/App';
+import App from './ch16/App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 // 해당 괄호안에 태그가 들어가면 작동함

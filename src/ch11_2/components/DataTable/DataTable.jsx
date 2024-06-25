@@ -13,14 +13,14 @@ function DataTable() {
     // const [ isDeleteRequest, setIsDeleteRequest ] = useState(false);
     const [ isEditRequest, setIsEditRequest ] = useState(false);
 
-    useEffect(() => {
-        const lsProducts = localStorage.getItem("products");
-        setProducts(!lsProducts ? [] : JSON.parse(lsProducts));
-    }, []);
+    // useEffect(() => {
+    //     const lsProducts = localStorage.getItem("products");
+    //     setProducts(!lsProducts ? [] : JSON.parse(lsProducts));
+    // }, []);
 
-    useEffect(() => {
-        localStorage.setItem("products", JSON.stringify(products));
-    }, [products]);
+    // useEffect(() => {
+    //     localStorage.setItem("products", JSON.stringify(products));
+    // }, [products]);
 
     return (
         <div className="table-main-container">
@@ -31,6 +31,7 @@ function DataTable() {
             setProducts={setProducts}
             viewProducts={viewProducts}
             setIsEditRequest={setIsEditRequest}
+            setViewProducts={setViewProducts}
             />
             <DataTableBody 
             mode={mode}
