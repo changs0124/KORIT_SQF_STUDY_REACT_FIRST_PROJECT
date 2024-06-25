@@ -1,0 +1,48 @@
+.container {
+    margin: 100px auto;
+    width: 400px;
+  }
+  
+  .profile-container {
+    border: 2px solid #dbdbdb;
+    padding: 20px;
+  }
+  
+  .photo-placeholder {
+    border: 2px solid rgb(91, 91, 91);
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+  }
+  
+  .input-group {
+    margin: 10px 0;
+  }
+  
+  .input-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .input-group input {
+    width: calc(100% - 22px);
+    padding: 10px;
+    border: 2px solid rgb(91, 91, 91);
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  button {
+    background-color: rgb(91, 91, 91);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    cursor: pointer;
+    font-size: 16px;
+  }
