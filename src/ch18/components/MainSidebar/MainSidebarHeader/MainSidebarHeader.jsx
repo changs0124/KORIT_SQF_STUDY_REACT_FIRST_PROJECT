@@ -13,7 +13,7 @@ function MainSidebarHeader({ setMainSidebarShow }) {
             <MainContainer>
                 <div css={s.header}>
                     <h1 css={s.title}>
-                        <FaHome />
+                        <FaHome href="././App"/>
                         <span>수업자료</span>
                     </h1>
                     <button
