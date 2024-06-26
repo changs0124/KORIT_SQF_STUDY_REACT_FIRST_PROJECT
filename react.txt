@@ -1,9 +1,12 @@
 react
 https://react.vlpt.us/
 https://www.npmjs.com/
+https://www.daleseo.com/emotion/ - /** @jsxImportSource @emotion/react */
 
 alert
 SweetAlert2
+
+file - preferences - configure user snippets - java
 
 사용 이유
 처음 부터 다시 코드를 돌리는 모던 js(vanila js) 다르게 가상 돔을 사용하기 때문에 변경된 부분만 다시 리렌더링하기 때문에 모던 js보다 빠르다.
