@@ -6,17 +6,13 @@ import { Global } from '@emotion/react';
 import MainBody from './components/MainBody/MainBody';
 
 function App(props) {
-    const [ isMainSidebarShow, setMainSidebarShow ] = useState(false);
     return (
         <>
             <Global css={Global.reset}/>
             <MainLayout>
-                <MainHeader setMainSidebarShow={setMainSidebarShow} />
+                <MainHeader />
                 <MainBody />
-                <MainSidebar
-                    isMainSidebarShow={isMainSidebarShow} 
-                    setMainSidebarShow={setMainSidebarShow}    
-                />
+                <MainSidebar />
             </MainLayout>
         </>
         
