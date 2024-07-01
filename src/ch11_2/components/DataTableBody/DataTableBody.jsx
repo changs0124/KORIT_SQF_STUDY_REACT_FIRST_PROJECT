@@ -5,11 +5,11 @@ function DataTableBody({ mode, setMode, products, setProducts, viewProducts, set
     const [ checkedAll, setCheckedAll ] = useState(false);
 
     useEffect(() => {
-        if(mode === 0) {
-            resetViewProducts();
-            setCheckedAll(false);
-        }
-    }, [products, mode])
+        if(mode === 0) {        
+            resetViewProducts();        
+            setCheckedAll(false);       
+       }
+   }, [products, mode])
 
     const handleCheckedAllChange = () => {
         setCheckedAll(checked => {

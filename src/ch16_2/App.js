@@ -86,7 +86,7 @@ function App() {
                 onChange={handleInputChange}
             />
             <button onClick={handleSubmitButton}>저장</button>
-            <button onClick={handleRestartButton}>새로고침</button>
+            {/* <button onClick={handleRestartButton}>새로고침</button> */}
             </div>
         </div>
         </>

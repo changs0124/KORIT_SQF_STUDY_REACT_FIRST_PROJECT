@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import "./App.css"
 
@@ -42,6 +41,7 @@ function App() {
 
     const handleSubmitButton = () => {
         localStorage.setItem("data", JSON.stringify(data))
+        
     }
     return ( 
         <>

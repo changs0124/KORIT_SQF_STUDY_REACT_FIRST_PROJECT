@@ -1,70 +1,64 @@
-# Getting Started with Create React App
+# 프로젝트 생성
+* npx create-react-app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 라이브러리 설치
+* 라우터 > npm install react-router_dom
+* 이모션 > npm install @emotion/react
+* 리코일 > npm install recoil
+* React icons > npm install react-icons
+* Sweetaler2 > npm install sweetalert2
 
-## Available Scripts
 
-In the project directory, you can run:
+# JSX 자동완성
+- ctrl + shift + p
+- user settings.json(vscode 사용자 설정) 선택
+- 아래 설정 추가
 
-### `npm start`
+~~~
+     "emmet.syntaxProfiles": {
+        "javascript": "jsx"
+    },
+    "emmet.includeLanguages": {
+        "javascript": "html"
+    }
+~~~
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# 확장기능(Extensions)
+- reactjs-code-snippets
+- vscode-color-pciker
+- vscode-styled-components
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# 터미널 선택
+- ctrl + shift + p
+- terminal: select Default Profile 선택
+- git bash
 
-### `npm test`
+# 폴더 구조
+- conponents
+- pages
+- constants
+- styles
+- hooks
+- configs
+- utils
+- atoms
+- assets : 이미지, 짤, 외부에서 불러 올 파일
+- apis(services)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# 주요 함수
+- useState(초기값)
+- useEffect(() => {}, [])
+- useRef(기본값)
+- useMemo(() => 리턴, [])
+- useCallback(() => {}, [])
+- useRecoilState(atom)
+- useNaviate()
+- useLocation()
+- useParams()
+- useSearchParams()
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 명명규칙
+- Component 이름은 대문자
+- 하나의 Component 폴더에는 하나의 Component.jsx 파일 style.js파일로 구성
+- constants 폴더에 들어가는 상수들은 대문자와 스네이크 표기법으로 작성
+- 이벤트 함수명은 handle로 시작해서 이벤트명으로 끝낸다.
