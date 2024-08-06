@@ -7,6 +7,7 @@
 * 리코일 > npm install recoil
 * React icons > npm install react-icons
 * Sweetaler2 > npm install sweetalert2
+* 모달 > npm install react-modal
 
 
 # JSX 자동완성
